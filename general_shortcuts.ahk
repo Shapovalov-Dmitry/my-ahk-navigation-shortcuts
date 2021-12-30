@@ -33,9 +33,6 @@ CapsLock & VK0xBA::^Right ; Go one word forward
 
 CapsLock & Enter::AppsKey ; Show context menu at the cursor
 
-CapsLock & <::#^Left ; Switch windows desktop backwards
-CapsLock & >::#^Right ; Switch windows desktop forwards
-
 CapsLock & Esc::WinClose, A
 
 VK0xE2::Shift ; Remap sliced shift key back to shift
@@ -49,3 +46,33 @@ CapsLock::
     else If (A_PriorHotKey = A_ThisHotkey and A_TimeSincePriorHotkey < 210 and GetKeyState("CapsLock", "T") = 1)
         SetCapsLockState, AlwaysOff ; Use double push to use capsLock.
 return
+
+; CapsLock & <::#^Left ; Switch windows desktop backwards
+; CapsLock & >::#^Right ; Switch windows desktop forwards
+
+; for amazonWorkspaces
+F14::
+SC03a & SC033::
+    if (WinActive("Amazon WorkSpaces")) {
+        Gui, help: Add, Text
+        Gui, help: Show
+        Send #^{Left}
+        sleep, 100
+        Gui, help: Destroy
+    } else {
+        Send #^{Left}
+    }
+return ; Switch windows desktop backwards
+
+F15::
+SC03a & SC034::
+    if (WinActive("Amazon WorkSpaces")) {
+        Gui, help: Add, Text
+        Gui, help: Show
+        Send #^{Right}
+        sleep, 100
+        Gui, help: Destroy
+    } else {
+        Send #^{Right}
+    }
+return ; Switch windows desktop forwards
