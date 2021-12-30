@@ -15,40 +15,40 @@ SetCapsLockState, AlwaysOff
 | CAPSLOCK + { Backspace }         | { Delete }                       |
 */
 
-CapsLock & i::Up
-CapsLock & k::Down
-CapsLock & j::Left
-CapsLock & l::Right
+SC03a & i::Up
+SC03a & k::Down
+SC03a & j::Left
+SC03a & l::Right
 
-CapsLock & u::Home
-CapsLock & o::End
+SC03a & u::Home
+SC03a & o::End
 
-CapsLock & y::PgUp
-CapsLock & h::PgDn
+SC03a & y::PgUp
+SC03a & h::PgDn
 
-CapsLock & Backspace::Delete
+SC03a & Backspace::Delete
 
-CapsLock & p::^Left ; Go one word back
-CapsLock & VK0xBA::^Right ; Go one word forward
+SC03a & p::^Left ; Go one word back
+SC03a & VK0xBA::^Right ; Go one word forward
 
-CapsLock & Enter::AppsKey ; Show context menu at the cursor
+SC03a & Enter::AppsKey ; Show context menu at the cursor
 
-CapsLock & Esc::WinClose, A
+SC03a & Esc::WinClose, A
 
 VK0xE2::Shift ; Remap sliced shift key back to shift
 
 :o:"""::@
 :o:---::—
 
-CapsLock::
-    If (A_PriorHotKey = A_ThisHotkey and A_TimeSincePriorHotkey < 210 and GetKeyState("CapsLock", "T") = 0)
+SC03a::
+    If (A_PriorHotKey = A_ThisHotkey and A_TimeSincePriorHotkey < 210 and GetKeyState("SC03a", "T") = 0)
         SetCapsLockState, AlwaysOn
-    else If (A_PriorHotKey = A_ThisHotkey and A_TimeSincePriorHotkey < 210 and GetKeyState("CapsLock", "T") = 1)
+    else If (A_PriorHotKey = A_ThisHotkey and A_TimeSincePriorHotkey < 210 and GetKeyState("SC03a", "T") = 1)
         SetCapsLockState, AlwaysOff ; Use double push to use capsLock.
 return
 
-; CapsLock & <::#^Left ; Switch windows desktop backwards
-; CapsLock & >::#^Right ; Switch windows desktop forwards
+; SC03a & <::#^Left ; Switch windows desktop backwards
+; SC03a & >::#^Right ; Switch windows desktop forwards
 
 ; for amazonWorkspaces
 F14::
