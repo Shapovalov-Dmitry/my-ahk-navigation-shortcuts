@@ -1,4 +1,4 @@
-﻿#NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
+#NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
 SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 #SingleInstance, force
@@ -14,6 +14,10 @@ SetCapsLockState, AlwaysOff
 | CAPSLOCK + { y, h }              | { PageUp, PageDown }             |
 | CAPSLOCK + { Backspace }         | { Delete }                       |
 */
+
+SC03a & Tab::PrintScreen
+
+SC03a & Space::#Space
 
 SC03a & i::Up
 SC03a & k::Down
