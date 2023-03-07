@@ -3,7 +3,7 @@
 SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 #SingleInstance, force
 
-; #NoTrayIcon
+#NoTrayIcon
 SetCapsLockState, AlwaysOff
 
 /*
@@ -71,12 +71,13 @@ SC03a & Enter::AppsKey ; Show context menu at the cursor
 ; VK0xE2::Shift ; Remap sliced shift key back to shift
 
 ; :o:"""::@
-; :o:---::—
 
-; SC03a::
-;     If (A_PriorHotKey = A_ThisHotkey and A_TimeSincePriorHotkey < 210 and GetKeyState("SC03a", "T") = 0)
-;         SetCapsLockState, AlwaysOn
-;     else If (A_PriorHotKey = A_ThisHotkey and A_TimeSincePriorHotkey < 210 and GetKeyState("SC03a", "T") = 1)
-;         SetCapsLockState, AlwaysOff ; Use double push to use capsLock.
-; return
+:*:-- ::{U+2014}
+
+    ; SC03a::
+    ;     If (A_PriorHotKey = A_ThisHotkey and A_TimeSincePriorHotkey < 210 and GetKeyState("SC03a", "T") = 0)
+    ;         SetCapsLockState, AlwaysOn
+    ;     else If (A_PriorHotKey = A_ThisHotkey and A_TimeSincePriorHotkey < 210 and GetKeyState("SC03a", "T") = 1)
+    ;         SetCapsLockState, AlwaysOff ; Use double push to use capsLock.
+    ; return
 
