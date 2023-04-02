@@ -1,7 +1,6 @@
 ; Thanks to https://www.reddit.com/r/AutoHotkey/comments/74whf2/trying_to_disable_touchpad_while_typing_on_a_cube/
 
 #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
-SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 
 Loop 26 {
