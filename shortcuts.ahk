@@ -1,7 +1,6 @@
 #NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
 SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 #SingleInstance, force
-#NoTrayIcon
 
 SetCapsLockState, AlwaysOff
 
@@ -21,19 +20,12 @@ SC03a & o::End
 SC03a & y::PgUp
 SC03a & h::PgDn
 
-SC03a & SC033::
-    Send #^{Left}
-return ; Switch windows desktop backwards
+SC03a & SC033:: #^Left
 
-SC03a & SC034::
-    Send #^{Right}
-return ; Switch windows desktop forwards
+SC03a & SC034:: #^Right
 
 SC03a & Backspace::Delete
 
-SC03a & p::^Left ; Go one word back
-SC03a & VK0xBA::^Right ; Go one word forward
-
 SC03a & Enter::AppsKey ; Show context menu at the cursor
 
-:*:-- ::{U+2014}
+:*:long- ::{U+2014}
